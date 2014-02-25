@@ -21,6 +21,5 @@ Imports:
 Collate:
     'osf_get_file.r'
     'osf_find_user.r'
-    'dryad_getfile.r'
     'osf_get_files.r'
     'osf_get_projects.r'
