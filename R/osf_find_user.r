@@ -4,7 +4,7 @@
 #' @export
 
 
-_build_search_term(user_name, local){
+build_search_term(user_name, local){
     search_term <- "https://osf.io/api/v1/search/?q=user:"  
     
     ##### For testing purposes ##### RM for production
@@ -31,7 +31,7 @@ _build_search_term(user_name, local){
 
 osf_find_user <- function(user_name, local=FALSE){
     
-    json_data <- getURL(_build_search_term(user_name))
+    json_data <- getURL(build_search_term(user_name))
     json_data <- fromJSON(json_data, method = "C", unexpected.escape = "error" )
     
     df <- data.frame("user_name"=character(), "user_url"=character())  
