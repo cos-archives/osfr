@@ -1,11 +1,4 @@
-# require(httr)
-# require(RCurl)
-# require(XML)
-# require(stringr)
-# require(gdata)
-# require(tools)
-# require(XLConnect)
-# require(downloader)
+#' @import httr RCurl XML stringr gdata tools XLConnect downloader
 #' @export
 
 ## url to dataframe methods  
