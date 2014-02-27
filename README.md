@@ -7,7 +7,7 @@ enables access to public projects and their files through R.
 
 install:
 
-require(devtools)
+require(devtools)<br>
 install_git("https://github.com/alexschiller/rosf.git")
 
 functions:
