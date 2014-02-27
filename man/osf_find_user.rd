@@ -5,7 +5,7 @@
   osf_find_user(user_name)
 }
 \arguments{
-\item{user_name}{name of user, i.e. 'John Smith'.}
+  \item{user_name}{name of user, i.e. 'John Smith'.}
 }
 \description{
   Get a data.frame of OSF users and user_urls
