@@ -1,3 +1,5 @@
+#' @param Takes a users project_id, e.g., osf_get_project_files("5ctke")
+#' @return A data.frame of the files in the public project
 #' @import RCurl rjson
 #' @export
 

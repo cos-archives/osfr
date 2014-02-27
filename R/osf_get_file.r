@@ -1,3 +1,5 @@
+#' @param Takes file download_url to a datafile, e.g., osf_get_file("https://osf.io/api/v1/project/5ctke/osffiles/something.xlsx/version/1/")
+#' @return A data.frame of the data
 #' @import httr RCurl XML stringr gdata tools XLConnect downloader
 #' @export
 
