@@ -1,5 +1,4 @@
-# require(RCurl)
-# require(rjson)
+#' @import RCurl rjson
 #' @export
 
 osf_find_user <- function(user_name, local=FALSE){
