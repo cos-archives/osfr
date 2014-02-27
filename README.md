@@ -5,11 +5,10 @@ rosf
 
 enables access to public projects and their files through R.
 
-|install|
+install:
 
 require(devtools)
 install_git("https://github.com/alexschiller/rosf.git")
-
 
 functions:
 - osf_find_user - takes a username and returns a dataframe of users and their user_urls
