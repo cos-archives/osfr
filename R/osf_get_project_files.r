@@ -3,6 +3,11 @@
 #' @import RCurl rjson
 #' @export
 
+clean_download_url <- function(download_url){
+  end <- substring(download_url, 1, nchar(download_url)-9)
+  return(paste0("https://osf.io/api/v1/project/", end))
+}
+
 osf_get_project_files <- function(project_id, local=FALSE){
     url <- gsub("project_id", project_id, "https://osf.io/api/v1/project/project_id/osffiles/r/")
     
@@ -17,7 +22,7 @@ osf_get_project_files <- function(project_id, local=FALSE){
     for(file in json_data){
         df <- rbind(df, data.frame(
             "file_name" = file$name,
-            "download_url" = file$download,
+            "download_url" = clean_download_url(file$download),
             "versions" = length(file$versions),
             "date_modified" = file$date_modified
         ))
