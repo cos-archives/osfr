@@ -24,6 +24,5 @@ osf_get_project_files <- function(project_id, local=FALSE){
             "date_modified" = file$date_modified
         ))
     }
-    
     return(df)
 }
