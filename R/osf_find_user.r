@@ -4,7 +4,7 @@
 #' @export
 
 
-build_search_term(user_name, local){
+build_search_term <- function(user_name, local){
     search_term <- "https://osf.io/api/v1/search/?q=user:"  
     
     ##### For testing purposes ##### RM for production
