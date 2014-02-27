@@ -1,5 +1,4 @@
-# require(RCurl)
-# require(rjson)
+#' @import RCurl rjson
 #' @export
 
 osf_get_projects <- function(user_url, local=FALSE){
