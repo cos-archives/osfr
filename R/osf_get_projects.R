@@ -1,5 +1,6 @@
 # require(RCurl)
 # require(rjson)
+#' @export
 
 get_projects <- function(user_url, local=FALSE){
   url <- gsub("user_url", user_url, "https://osf.io/api/v1/profile/user_url/public_projects/")

@@ -6,6 +6,7 @@
 # require(tools)
 # require(XLConnect)
 # require(downloader)
+#' @export
 
 ## url to dataframe methods  
 
