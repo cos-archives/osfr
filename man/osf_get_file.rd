@@ -5,7 +5,7 @@
   osf_get_file(url)
 }
 \arguments{
-\item{download_url}{download_url from osf_get_files, i.e. 'https://osf.io/api/v1/project/5ctke/osffiles/something.xlsx/version/1/'.}
+  \item{download_url}{download_url from osf_get_files, i.e. 'https://osf.io/api/v1/project/5ctke/osffiles/something.xlsx/version/1/'.}
 }
 \description{
   Create a data.frame from a file on the OSF
