@@ -2,7 +2,7 @@
 # require(rjson)
 #' @export
 
-find_osf_user <- function(user_name, local=FALSE){
+osf_find_user <- function(user_name, local=FALSE){
   search_term <- "https://osf.io/api/v1/search/?q=user:"  
   if(local==TRUE){
     search_term <- "localhost:5000/api/v1/search/?q=user:"  
