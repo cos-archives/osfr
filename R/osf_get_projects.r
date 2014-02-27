@@ -16,7 +16,7 @@ osf_get_projects <- function(user_url, local=FALSE){
     
     df <- data.frame("projects"=character())  #todo need to add name to OSF route, easy
     
-    for(user_data in json_data$nodes){
+    for(user_data in json_data){
         project_id <- user_data$id
         df <- rbind(df, data.frame("projects" = project_id))
     }
