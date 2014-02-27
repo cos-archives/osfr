@@ -24,7 +24,7 @@ build_search_term <- function(user_name, local){
             search_term <- paste0(search_term, name[[1]][enumerate], "+AND+user:")  
         }
         enumerate <- enumerate + 1
-        
+    }
     return(search_term)
 }
 

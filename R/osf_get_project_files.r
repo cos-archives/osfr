@@ -18,7 +18,7 @@ osf_get_project_files <- function(project_id, local=FALSE){
         df <- rbind(df, data.frame(
             "file_name" = file$name,
             "download_url" = file$download,
-            "versions" = length( file$versions ),
+            "versions" = length(file$versions),
             "date_modified" = file$date_modified
         ))
     }

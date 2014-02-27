@@ -20,6 +20,5 @@ osf_get_projects <- function(user_url, local=FALSE){
         project_id <- user_data$id
         df <- rbind(df, data.frame("projects" = project_id))
     }
-#     return(df)
-print(df)
+    return(df)
 }
