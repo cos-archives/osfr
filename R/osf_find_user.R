@@ -1,5 +1,5 @@
-require(RCurl)
-require(rjson)
+# require(RCurl)
+# require(rjson)
 
 find_osf_user <- function(user_name, local=FALSE){
   search_term <- "https://osf.io/api/v1/search/?q=user:"  

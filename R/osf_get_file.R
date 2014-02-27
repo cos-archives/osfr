@@ -1,11 +1,11 @@
-require(httr)
-require(RCurl)
-require(XML)
-require(stringr)
-require(gdata)
-require(tools)
-require(XLConnect)
-require(downloader)
+# require(httr)
+# require(RCurl)
+# require(XML)
+# require(stringr)
+# require(gdata)
+# require(tools)
+# require(XLConnect)
+# require(downloader)
 
 ## url to dataframe methods  
 
