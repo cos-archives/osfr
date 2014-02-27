@@ -5,7 +5,7 @@
   osf_get_projects(user_url)
 }
 \arguments{
-\item{user_url}{id of a user, i.e. 'rnizy'.}
+  \item{user_url}{id of a user, i.e. 'rnizy'.}
 }
 \description{
   Get a data.frame of all public projects for a user
