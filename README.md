@@ -1,7 +1,7 @@
 rosf
 ====
 
-rosf is a package interface with the Open Science Framework
+rosf is an R package that enables API access to the Open Science Framework
 
 Enables access to public projects and their files through R.
 
