@@ -2,7 +2,7 @@
 # require(rjson)
 #' @export
 
-get_projects <- function(user_url, local=FALSE){
+osf_get_projects <- function(user_url, local=FALSE){
   url <- gsub("user_url", user_url, "https://osf.io/api/v1/profile/user_url/public_projects/")
   if(local==TRUE){
     url <- gsub("user_url", user_url, "localhost:5000/api/v1/profile/user_url/public_projects/")
