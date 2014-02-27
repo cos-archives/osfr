@@ -13,9 +13,7 @@ osf_get_project_files <- function(project_id, local=FALSE){
   
     json_data <- getURL(url)
     json_data <- fromJSON(json_data, method = "C", unexpected.escape = "error")
-  
     df <- data.frame("file_name"=character(), "download_url"=character(), "versions"=numeric(), "date_modified"=character())
-    
     for(file in json_data){
         df <- rbind(df, data.frame(
             "file_name" = file$name,
