@@ -3,7 +3,13 @@ rosf
 
 <b>rosf</b> is an R package that enables API access to the Open Science Framework
 
-Enables access to public projects and their files through R.
+enables access to public projects and their files through R.
+
+|install|
+
+require(devtools)
+install_git("https://github.com/alexschiller/rosf.git")
+
 
 functions:
 - osf_find_user - takes a username and returns a dataframe of users and their user_urls
