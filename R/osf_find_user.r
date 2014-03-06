@@ -3,10 +3,10 @@
 #' @import RCurl rjson
 #' @export
 
+option(osf_url = "staging.openscienceframework.org/api/v1/")
 
 build_search_term <- function(user_name){
-#     search_term <- "https://osf.io/api/v1/search/?q=user:"  
-    search_term <- "staging.openscienceframework.org/api/v1/search/?q=user:"  
+    search_term <- paste0(getOption("osf_url"), "search/?q=user:")  
     name <- strsplit(user_name," ")
 
     for(part in name[[1]]){

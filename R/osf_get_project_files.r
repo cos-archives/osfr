@@ -5,16 +5,14 @@
 
 clean_download_url <- function(download_url){
     end <- substring(download_url, 1, nchar(download_url)-9)
-#     return(paste0("https://osf.io/api/v1/project/", end))
-    return(paste0("staging.openscienceframework.org/api/v1/project/", end))
+    return(paste0(getOption("osf_url", "project/", end))
 }
 
 osf_get_project_files <- function(project_id){
-#     url <- gsub("project_id", project_id, "https://osf.io/api/v1/project/project_id/osffiles/r/")
-    url <- gsub("project_id", project_id, "staging.openscienceframework.org/api/v1/project/project_id/osffiles/")
+    base_url <- paste0(getOption("osf_url"), "/project/project_id/osffiles/")
+    url <- gsub("project_id", project_id, base_url)
     returned <- getURL(url)
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error")
-    print(json_data)
     
     df <- data.frame("file_name"=character(), "download_url"=character(), "versions"=numeric(), "date_modified"=character())
     
@@ -29,5 +27,3 @@ osf_get_project_files <- function(project_id){
     }
     return(df)
 }
-
-osf_get_project_files("5ctke")
