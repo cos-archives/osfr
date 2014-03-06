@@ -21,7 +21,6 @@ get_txt <- function(url){
 }
 
 # ext to method
-
 get_list <- list(
     "xls" = get_xls_xlsx,
     "xlsx" = get_xls_xlsx,
@@ -29,8 +28,8 @@ get_list <- list(
     "txt" = get_txt
     )
 
-
 osf_get_file <- function(url){
+    url = paste0("http://", url) ## TEMP ## getURL requires at least http, Remove for production
     ext <- file_ext(
         substr(url, 1, regexpr("\\/version/+\\d", url, ignore.case=TRUE)-1)
         )
