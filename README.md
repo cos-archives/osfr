@@ -1,7 +1,7 @@
 osfr
 ====
 
-<b>rosf</b> is an R package that enables API access to the Open Science Framework
+<b>osfr</b> is an R package that enables API access to the Open Science Framework
 enables access to public projects and their files through R.
 
 ## WARNING: INTERFACE IS NOT FINISHED
