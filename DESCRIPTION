@@ -20,3 +20,7 @@ Imports:
     tools
 Collate:
     'osf_find_user.r'
+    'osf_read.r'
+    'osf_get_project_files.r'
+    'osf_get_projects.r'
+
