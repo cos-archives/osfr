@@ -1,4 +1,4 @@
-Package: rosf
+Package: osfr
 Type: Package
 Description: Interface to the API for the Open Science Framework
 Title: Open Science Framework R API 
