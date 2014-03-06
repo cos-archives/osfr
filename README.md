@@ -11,6 +11,7 @@ This code is not yet ready to be used beyond trying it out, long term support of
 ##install
 
 ```bash
+install.packages("devtools") # (if not installed)
 require(devtools)
 install_git("https://github.com/alexschiller/rosf.git")
 ```
