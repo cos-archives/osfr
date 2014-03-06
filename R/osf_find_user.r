@@ -3,7 +3,7 @@
 #' @import RCurl rjson
 #' @export
 
-option(osf_url = "staging.openscienceframework.org/api/v1/")
+options(osf_url = "staging.openscienceframework.org/api/v1/")
 
 build_search_term <- function(user_name){
     search_term <- paste0(getOption("osf_url"), "search/?q=user:")  
@@ -34,3 +34,4 @@ osf_find_user <- function(user_name){
     
     return(df)
 }
+
