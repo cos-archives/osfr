@@ -31,12 +31,13 @@ get_list <- list(
 
 
 osf_get_file <- function(url){
-    ext <- file_ext(substr(url, 1, regexpr("\\/version/+\\d", url, ignore.case=TRUE)-1))
-    if(is.element(ext, c("csv", "xls", "xlsx", "txt"))){
+    ext <- file_ext(
+        substr(url, 1, regexpr("\\/version/+\\d", url, ignore.case=TRUE)-1)
+        )
+    if(
+      is.element(ext, c("csv", "xls", "xlsx", "txt"))
+      ){
         return(get_list[[ext]](url))  
     }
     return("No method to read file")
 }
-
-
-

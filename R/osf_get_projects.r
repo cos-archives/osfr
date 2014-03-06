@@ -4,7 +4,8 @@
 #' @export
 
 osf_get_projects <- function(user_url){
-    url <- gsub("user_url", user_url, "https://osf.io/api/v1/profile/user_url/public_projects/")
+#     url <- gsub("user_url", user_url, "https://osf.io/api/v1/profile/user_url/public_projects/")
+    url <- gsub("user_url", user_url, "https://staging.centerforopenscience.org/api/v1/profile/user_url/public_projects/")
     returned <- getURL(url)
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error" )
     

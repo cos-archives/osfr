@@ -5,28 +5,24 @@
 
 
 build_search_term <- function(user_name){
-    search_term <- "https://osf.io/api/v1/search/?q=user:"  
+#     search_term <- "https://osf.io/api/v1/search/?q=user:"  
+    search_term <- "https://staging.centerforopenscience.org/api/v1/search/?q=user:"  
     name <- strsplit(user_name," ")
-    enumerate <- 1
-    len <- length(name[[1]])
-    
-    while(enumerate <= len){
-        if(enumerate == len){
-            search_term <- paste0(search_term, name[[1]][enumerate])  
-        }
-        else{
-            search_term <- paste0(search_term, name[[1]][enumerate], "+AND+user:")  
-        }
-        enumerate <- enumerate + 1
+
+    for(part in name[[1]]){
+        search_term <- paste0(search_term, part, "+AND+user:")
     }
+    
+    search_term <- substr(search_term, 1, nchar(search_term)-10) # remove lingering "+AND+user:"    
+    
     return(search_term)
 }
 
 
 osf_find_user <- function(user_name){
     
-    json_data <- getURL(build_search_term(user_name))
-    json_data <- fromJSON(json_data, method = "C", unexpected.escape = "error" )
+    returned <- getURL(build_search_term(user_name))
+    json_data <- fromJSON(returned, method = "C", unexpected.escape = "error" )
     
     df <- data.frame("user_name"=character(), "user_url"=character())  
     
