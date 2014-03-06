@@ -4,7 +4,8 @@ rosf
 <b>rosf</b> is an R package that enables API access to the Open Science Framework
 enables access to public projects and their files through R.
 
-##ALPHA VERSION: CODE WILL BE IN CONSTANT FLUX
+## WARNING: INTERFACE IS NOT FINISHED
+
 This code is not yet ready to be used beyond trying it out, long term support of functions cannot be guarenteed
 
 ##install
