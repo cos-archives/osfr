@@ -1,4 +1,4 @@
-rosf
+osfr
 ====
 
 <b>rosf</b> is an R package that enables API access to the Open Science Framework
