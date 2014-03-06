@@ -25,7 +25,7 @@ build_search_term <- function(user_name){
 
 osf_find_user <- function(user_name){
     
-    json_data <- getURL(build_search_term(user_name, local))
+    json_data <- getURL(build_search_term(user_name))
     json_data <- fromJSON(json_data, method = "C", unexpected.escape = "error" )
     
     df <- data.frame("user_name"=character(), "user_url"=character())  
