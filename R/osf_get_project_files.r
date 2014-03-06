@@ -13,7 +13,7 @@ osf_get_project_files <- function(project_id){
 #     url <- gsub("project_id", project_id, "https://osf.io/api/v1/project/project_id/osffiles/r/")
     url <- gsub("project_id", project_id, "staging.openscienceframework.org/api/v1/project/project_id/osffiles/r/")
     returned <- getURL(url)
-    json_data <- fromJSON(json_data, method = "C", unexpected.escape = "error")
+    json_data <- fromJSON(returned, method = "C", unexpected.escape = "error")
     
     df <- data.frame("file_name"=character(), "download_url"=character(), "versions"=numeric(), "date_modified"=character())
     for(file in json_data){
