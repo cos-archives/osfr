@@ -4,14 +4,8 @@
 #' @export
 
 
-build_search_term <- function(user_name, local=FALSE){
+build_search_term <- function(user_name){
     search_term <- "https://osf.io/api/v1/search/?q=user:"  
-    
-    ##### For testing purposes ##### RM for production
-    if(local==TRUE){
-        search_term <- "localhost:5000/api/v1/search/?q=user:"  
-    }
-    
     name <- strsplit(user_name," ")
     enumerate <- 1
     len <- length(name[[1]])
@@ -29,7 +23,7 @@ build_search_term <- function(user_name, local=FALSE){
 }
 
 
-osf_find_user <- function(user_name, local=FALSE){
+osf_find_user <- function(user_name){
     
     json_data <- getURL(build_search_term(user_name, local))
     json_data <- fromJSON(json_data, method = "C", unexpected.escape = "error" )
