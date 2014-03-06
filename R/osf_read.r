@@ -28,7 +28,7 @@ get_list <- list(
     "txt" = get_txt
     )
 
-osf_get_file <- function(url){
+osf_read <- function(url){
     url = paste0("http://", url) ## TEMP ## getURL requires at least http, Remove for production
     ext <- file_ext(
         substr(url, 1, regexpr("\\/version/+\\d", url, ignore.case=TRUE)-1)
@@ -40,3 +40,5 @@ osf_get_file <- function(url){
     }
     return("No method to read file")
 }
+
+read.osf <- osf_read
