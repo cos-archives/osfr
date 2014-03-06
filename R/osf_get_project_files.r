@@ -5,7 +5,7 @@
 
 clean_download_url <- function(download_url){
     end <- substring(download_url, 1, nchar(download_url)-9)
-    return(paste0(getOption("osf_url", "project/", end))
+    return(paste0(getOption("osf_url"), "project/", end))
 }
 
 osf_get_project_files <- function(project_id){
