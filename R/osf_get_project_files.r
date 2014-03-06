@@ -6,12 +6,12 @@
 clean_download_url <- function(download_url){
     end <- substring(download_url, 1, nchar(download_url)-9)
 #     return(paste0("https://osf.io/api/v1/project/", end))
-    return(paste0("https://staging.openscienceframework.org/api/v1/project/", end))
+    return(paste0("staging.openscienceframework.org/api/v1/project/", end))
 }
 
 osf_get_project_files <- function(project_id){
 #     url <- gsub("project_id", project_id, "https://osf.io/api/v1/project/project_id/osffiles/r/")
-    url <- gsub("project_id", project_id, "https://staging.openscienceframework.org/api/v1/project/project_id/osffiles/r/")
+    url <- gsub("project_id", project_id, "staging.openscienceframework.org/api/v1/project/project_id/osffiles/r/")
     returned <- getURL(url)
     json_data <- fromJSON(json_data, method = "C", unexpected.escape = "error")
     
