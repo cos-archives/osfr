@@ -2,7 +2,7 @@
 \alias{osf_get_file}
 \title{Get data.frame of OSF data file}
 \usage{
-  osf_get_file(url)
+  osf_read(url)
 }
 \arguments{
   \item{download_url}{download_url from osf_get_files, i.e. 'https://osf.io/api/v1/project/5ctke/osffiles/something.xlsx/version/1/'.}
