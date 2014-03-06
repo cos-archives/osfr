@@ -4,9 +4,9 @@
 #' @export
 
 osf_get_projects <- function(user_url){
-    url <- gsub("user_url", user_url, "https://osf.io/api/v1/profile/user_url/public_projects/")}
-    
-    json_data <- fromJSON(getURL(url), method = "C", unexpected.escape = "error" )
+    url <- gsub("user_url", user_url, "https://osf.io/api/v1/profile/user_url/public_projects/")
+    returned <- getURL(url)
+    json_data <- fromJSON(returned, method = "C", unexpected.escape = "error" )
     
     df <- data.frame("projects"=character())  #todo need to add name to OSF route, easy
     
