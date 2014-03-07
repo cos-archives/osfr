@@ -7,6 +7,7 @@ enables access to public projects and their files through R.
 ## WARNING: INTERFACE IS NOT FINISHED
 
 This code is not yet ready to be used beyond trying it out, long term support of functions cannot be guarenteed
+Currently requires options("osf_url_base"="staging.openscienceframework.org") to be set to run
 
 ##install
 
