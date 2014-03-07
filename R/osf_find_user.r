@@ -6,7 +6,7 @@
 got <- ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
 
 build_search_term <- function(user_name){
-    search_term <- paste0(got, "api/v1/search/?q=user:")  
+    search_term <- paste0(got, "/api/v1/search/?q=user:")  
     name <- strsplit(user_name," ")
 
     for(part in name[[1]]){
