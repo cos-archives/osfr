@@ -4,7 +4,7 @@
 #' @export
 
 osf_get_projects <- function(user_url){
-    base_url <- paste0(getOption("osf_url"), "/profile/user_url/public_projects/")
+    base_url <- paste0(got, "api/v1/profile/user_url/public_projects/")
     url <- gsub("user_url", user_url, base_url)
     returned <- getURL(url)
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error" )

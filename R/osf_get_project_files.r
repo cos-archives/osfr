@@ -5,11 +5,11 @@
 
 clean_download_url <- function(download_url){
     end <- substring(download_url, 1, nchar(download_url)-9)
-    return(paste0(getOption("osf_url"), "project/", end))
+    return(paste0(got, "project/", end))
 }
 
 osf_get_project_files <- function(project_id){
-    base_url <- paste0(getOption("osf_url"), "/project/project_id/osffiles/")
+    base_url <- paste0(getOption("osf_url"), "api/v1/project/project_id/osffiles/")
     url <- gsub("project_id", project_id, base_url)
     returned <- getURL(url)
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error")
