@@ -13,7 +13,6 @@ clean_download_url <- function(download_url){
 osf_get_project_files <- function(project_id){
     print(osf_url_base)
     print(getOption('osf_url_base'))
-    print(options())
     
     base_url <- paste0(osf_url_base, "/api/v1/project/project_id/osffiles/")
     url <- gsub("project_id", project_id, base_url)
