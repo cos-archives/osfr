@@ -6,10 +6,6 @@
 }
 \arguments{
   \item{user_name}{name of user, i.e. 'John Smith'.}
-
-  \item{curl}{If using in a loop, call getCurlHandle()
-  first and pass the returned value in here (avoids
-  unnecessary footprint)}
 }
 \value{
   A URL for dataset for the Dryad id.
