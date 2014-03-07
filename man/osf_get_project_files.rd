@@ -1,17 +1,20 @@
-\name{osf_get_project_files}
-\alias{osf_get_project_files}
-\title{Get a list of files from a public project}
+\name{osf_find_user}
+\alias{osf_find_user}
+\title{Find OSF users via search}
 \usage{
-    osf_get_project_files(project_id)
+  osf_find_user(user_name)
 }
 \arguments{
-    \item{project_id}{id of a public project, i.e. '5ctke'.}
+  \item{user_name}{name of user, i.e. 'John Smith'.}
+}
+\value{
+  A URL for dataset for the Dryad id.
 }
 \description{
-    Get a data.frame of files from a public project
+  Get a data.frame of OSF users and user_urls
 }
 \examples{
-    \dontrun{
-        osf_get_project_files(5ctke)
-    }
+\dontrun{
+osf_find_user("Jane Smith")
+}
 }
