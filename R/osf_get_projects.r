@@ -3,7 +3,7 @@
 #' @import RCurl rjson
 #' @export
 
-ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
+got <- ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
 
 osf_get_projects <- function(user_url){
     base_url <- paste0(got, "api/v1/profile/user_url/public_projects/")

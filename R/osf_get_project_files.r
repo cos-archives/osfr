@@ -3,7 +3,7 @@
 #' @import RCurl rjson
 #' @export
 
-ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
+got <- ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
 
 clean_download_url <- function(download_url){
     end <- substring(download_url, 1, nchar(download_url)-9)
