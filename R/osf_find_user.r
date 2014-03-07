@@ -3,7 +3,6 @@
 #' @import RCurl rjson
 #' @export
 
-osf_url_base <- ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
 
 build_search_term <- function(user_name){
     search_term <- paste0(osf_url_base, "/api/v1/search/?q=user:")  
@@ -20,7 +19,7 @@ build_search_term <- function(user_name){
 
 
 osf_find_user <- function(user_name){
-
+    osf_url_base <- ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
     returned <- getURL(build_search_term(user_name))
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error" )
     
@@ -34,4 +33,3 @@ osf_find_user <- function(user_name){
     
     return(df)
 }
-
