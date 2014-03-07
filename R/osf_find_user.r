@@ -20,10 +20,7 @@ build_search_term <- function(user_name){
 
 
 osf_find_user <- function(user_name){
-    print(osf_url_base)
-    print(getOption('osf_url_base'))
-    print(options())
-    
+
     returned <- getURL(build_search_term(user_name))
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error" )
     
