@@ -3,15 +3,15 @@
 #' @import RCurl rjson
 #' @export
 
-got <- ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
+osf_url_base <- ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
 
 clean_download_url <- function(download_url){
     end <- substring(download_url, 1, nchar(download_url)-9)
-    return(paste0(got, "/project/", end))
+    return(paste0(osf_url_base, "/project/", end))
 }
 
 osf_get_project_files <- function(project_id){
-    base_url <- paste0(got, "/api/v1/project/project_id/osffiles/")
+    base_url <- paste0(osf_url_base, "/api/v1/project/project_id/osffiles/")
     url <- gsub("project_id", project_id, base_url)
     returned <- getURL(url)
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error")
