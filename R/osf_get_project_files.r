@@ -4,7 +4,7 @@
 #' @export
 
 
-clean_download_url <- function(download_url){
+clean_download_url <- function(download_url, osf_url_base){
     end <- substring(download_url, 1, nchar(download_url)-9)
     return(paste0(osf_url_base, "/project/", end))
 }
@@ -23,7 +23,7 @@ osf_get_project_files <- function(project_id){
     for(file in json_data){
         df <- rbind(df, data.frame(
             "file_name" = file$name,
-            "download_url" = clean_download_url(file$download),
+            "download_url" = clean_download_url(file$download, osf_url_base),
             "versions" = length(file$versions),
             "date_modified" = file$date_modified
         ))
