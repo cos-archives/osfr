@@ -1,17 +1,20 @@
-\name{osf_read}
-\alias{osf_read}
-\title{Get data.frame of OSF data file}
+\name{osf_find_user}
+\alias{osf_find_user}
+\title{Find OSF users via search}
 \usage{
-    osf_read(url)
+  osf_find_user(user_name)
 }
 \arguments{
-    \item{download_url}{download_url from osf_read, i.e. 'https://osf.io/api/v1/project/5ctke/osffiles/something.xlsx/version/1/'.}
+  \item{user_name}{name of user, i.e. 'John Smith'.}
+}
+\value{
+  A URL for dataset for the Dryad id.
 }
 \description{
-    Create a data.frame from a file on the OSF
+  Get a data.frame of OSF users and user_urls
 }
 \examples{
-    \dontrun{
-        read_osf("https://osf.io/api/v1/project/5ctke/osffiles/something.xlsx/version/1/")
+\dontrun{
+osf_find_user("Jane Smith")
 }
 }
