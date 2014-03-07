@@ -1,11 +1,20 @@
-\name{osf_get_projects}
-\alias{osf_get_projects}
-\title{Get a list of public projects from a user_name}
-\usage{osf_get_projects(user_url)}
-\arguments{
-    \item{user_url}{id of a user, i.e. 'rnizy'.}
+\name{osf_find_user}
+\alias{osf_find_user}
+\title{Find OSF users via search}
+\usage{
+  osf_find_user(user_name)
 }
-\description{Get a data.frame of all public projects for a user}
+\arguments{
+  \item{user_name}{name of user, i.e. 'John Smith'.}
+}
+\value{
+  A URL for dataset for the Dryad id.
+}
+\description{
+  Get a data.frame of OSF users and user_urls
+}
 \examples{
-    \dontrun{osf_get_projects('rnizy')}
+\dontrun{
+osf_find_user("Jane Smith")
+}
 }
