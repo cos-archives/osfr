@@ -3,9 +3,12 @@
 \title{Read osf file}
 \usage{
   read.osf("download_url")
+  read.osf("project_id", "file_name", "version")
 }
 \arguments{
-  \item{download_url}{download_url from read.osf, i.e. 'https://osf.io/api/v1/project/5ctke/osffiles/something.xlsx/version/1/'.}}
+  \item{df_or_project_id}{df line from osf_get_project_files or project_id}
+  \item{file_name}{if a project_id was specified, a file_name from the osf_get_project_files is required}
+  \item{version}{if a project_id was specified, a version from the osf_get_project_files is required}
 }
 
 \description{
@@ -13,6 +16,6 @@
 }
 \examples{
 \dontrun{
-read.osf("https://osf.io/api/v1/project/5ctke/osffiles/something.xlsx/version/1/")
+read.osf("5ctke","something.xlsx", "1")
 }
 }
