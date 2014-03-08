@@ -30,7 +30,8 @@ osf_find_user('Alex Schiller')
 
 >      user_name user_url
 >1 Alex Schiller    rnizy
-
+```
+```
 osf_get_projects('rnizy')
 
 >  projects
@@ -38,7 +39,8 @@ osf_get_projects('rnizy')
 >2    5ctke
 >3    mv8pj
 >4    4znzp
-
+```
+```
 osf_get_project_files('5ctke')
 
 >   file_name       download_url                                                      versions  date_modified
@@ -57,3 +59,4 @@ head(dat)
 > 4 4 5 6 7
 > 5 5 6 7 8
 > 6 6 7 8 9
+```
