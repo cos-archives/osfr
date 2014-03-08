@@ -26,7 +26,7 @@ install_git("https://github.com/CenterForOpenScience/osfr.git")
 ## examples
 ### find a user
 
-*Note:* Search terms must be exact (e.g., 'Alex Schill' will not find 'Alex Schiller' nor 'Alexander Schiller')
+Search terms must be exact (e.g., 'Alex Schill' will not find 'Alex Schiller' nor 'Alexander Schiller')
 
 ```bash
 require(osfr)
