@@ -1,10 +1,10 @@
-**osfr** is an R package that enables API access to the Open Science Framework, namely access to public projects and their files through R.
+## WARNING: THIS PACKAGE IS FOR TESTING ONLY; OSF API AND R INTERFACE ARE IN A STATE OF FLUX
 
-## WARNING: INTERFACE IS NOT FINISHED
+**osfr** is an R package that enables API access to the Open Science Framework, namely access to public projects and their files through R.
 
 This code is not yet ready to be used beyond trying it out, long term support of functions cannot be guaranteed.
 
-Currently requires `options("osf_url_base"="staging.openscienceframework.org")` to be set to run.
+Currently requires use of our staging server--nothing there is permanent although it may seem to be consitent with osf.io--it is not. `options("osf_url_base"="staging.openscienceframework.org")` to be set to run; this should change in the next few days (it's now 2014/03/08).
 
 ##install
 
