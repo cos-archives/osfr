@@ -24,7 +24,7 @@ install_git("https://github.com/CenterForOpenScience/osfr.git")
 - `osf_read` or `read.osf` - takes a download_url for a data file and reads it into a data.frame
  
 ## examples
-
+# find a user
 Find a user's url from their name (search terms must be exact) and store the output as users
 
 ```bash
@@ -36,11 +36,14 @@ users <- osf_find_user('Alex')
 >1 Alex Schiller    rnizy
 ```
 There is only one "Alex Schiller" so far, so we'll pass his user_url to a variable for the next function call
+
 **NOTE** The order of this data.frame is mutable and will change if another "Alex Schiller" makes an account
 ```
 user_id <- users[1,]$user_id
 > [1] rnizy
 ```
+
+# get a user's projects
 Get the projects for the user from their user_id:
 ```
 projects <- osf_get_projects('rnizy')
@@ -52,12 +55,13 @@ projects <- osf_get_projects('rnizy')
 >4    4znzp
 ```
 Assign the project id to a variable for the next function call:
+
 **NOTE** the order of this list is also mutable
 ```
 project_id <- projects[2,]$project
 > [1] 5ctke
 ```
-
+# get a project's
 Get a project's files from a project_id:
 
 ```
@@ -76,7 +80,9 @@ file_info <- files[8,]
 >  project_id   file_name versions       date_modified      size
 >8      5ctke asdfasd.csv        1 2014/02/11 04:17 PM 397 bytes
 ```
+# read a file
 Read a file into R from the file_info
+
 **NOTE** this method of reading is mutable and will read the most recent version of a file.
 ```
 dat <- read.osf(file_info)
