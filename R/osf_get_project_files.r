@@ -3,30 +3,28 @@
 #' @import RCurl rjson
 #' @export
 
-
-clean_download_url <- function(download_url, osf_url_base){
-    end <- substring(download_url, 1, nchar(download_url)-9)
-    return(paste0(osf_url_base, "/project/", end))
-}
+options("osf_url_base"="http://staging.openscienceframework.org/")
+getOption("osf_url_base")
 
 osf_get_project_files <- function(project_id){
     
     osf_url_base <- ifelse(is.null(got <- getOption('osf_url_base')), 'https://osf.io', got)
     base_url <- paste0(osf_url_base, "/api/v1/project/project_id/osffiles/")
+    
     url <- gsub("project_id", project_id, base_url)
+    
     returned <- getURL(url)
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error")
+
+    df <- do.call('rbind', lapply(json_data, function(project_data){
+        data.frame(
+            "project_id"=project_id,
+            "file_name"=project_data$name,
+            "versions"=length(project_data$versions),
+            "date_modified"=project_data$date_modified,
+            "size"=project_data$size
+        )
+    }))
     
-    df <- data.frame("file_name"=character(), "download_url"=character(), "versions"=numeric(), "date_modified"=character())
-    
-    
-    for(file in json_data){
-        df <- rbind(df, data.frame(
-            "file_name" = file$name,
-            "download_url" = clean_download_url(file$download, osf_url_base),
-            "versions" = length(file$versions),
-            "date_modified" = file$date_modified
-        ))
-    }
     return(df)
 }

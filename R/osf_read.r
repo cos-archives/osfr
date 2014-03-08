@@ -28,11 +28,22 @@ get_list <- list(
     "txt" = get_txt
     )
 
-osf_read <- function(url){
-    url = paste0("http://", url) ## TEMP ## getURL requires at least http, Remove for production
+osf_read <- function(df_or_project_id, file_name="", version="" ){
+    if(file_name==""){
+        project_id<-df_or_project_id$project_id
+        file_name<-df_or_project_id$file_name
+        version<-df_or_project_id$versions
+    }else{
+        project_id<-df_or_project_id
+    }
+    print(project_id)
+    print(file_name)
+    url<-paste0("https://","osf.io/api/v1/project/", project_id, "/osffiles/", file_name,"/version/", version, "/")
+    print(url)
     ext <- file_ext(
         substr(url, 1, regexpr("\\/version/+\\d", url, ignore.case=TRUE)-1)
         )
+    print(ext)
     if(
       is.element(ext, c("csv", "xls", "xlsx", "txt"))
       ){
