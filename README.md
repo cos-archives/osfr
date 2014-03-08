@@ -38,7 +38,7 @@ users <- osf_find_user('Alex Schiller')
 ```
 Select the right Alex Schiller (there is only one right now) and store it
 
-**NOTE** The order of the users data.frame is mutable and will change if another "Alex Schiller" makes an account
+**NOTE** that the order of the users data.frame is mutable and will change if another "Alex Schiller" makes an account
 ```
 user_id <- users[1,]$user_id
 > [1] rnizy
@@ -57,7 +57,7 @@ projects <- osf_get_projects('rnizy')
 ```
 Select the right project_id and store it
 
-**NOTE** The order of this list is also mutable
+**NOTE** that the order of this list is also mutable
 ```
 project_id <- projects[2,]$project
 > [1] 5ctke
