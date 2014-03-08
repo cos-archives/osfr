@@ -16,6 +16,6 @@
 }
 \examples{
 \dontrun{
-read_osf("https://osf.io/api/v1/project/5ctke/osffiles/something.xlsx/version/1/")
+osf_read("5ctke","something.xlsx", "1")
 }
 }
