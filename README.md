@@ -25,11 +25,11 @@ install_git("https://github.com/CenterForOpenScience/osfr.git")
 
 ## workflow
 
-Person's name: "Alex Schiller"
->Person's url: "rnizy" 
->>Project url: "5ctke" 
->>>File url: "https://"osf.io/api/v1/project/5ctke/osffiles/this.csv/version/1/"
->>>>Output: data
+>Person's name: "Alex Schiller"
+>>Person's url: "rnizy" 
+>>>Project url: "5ctke" 
+>>>>File url: "https://"osf.io/api/v1/project/5ctke/osffiles/this.csv/version/1/"
+>>>>>Output: data
  
 ## examples
 
