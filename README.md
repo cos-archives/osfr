@@ -22,14 +22,6 @@ install_git("https://github.com/CenterForOpenScience/osfr.git")
 - `osf_get_projects` - takes a user_url and returns a list of their public projects
 - `osf_get_project_files` - takes a project_id and returns a list of files and their download_urls
 - `osf_read` or `read.osf` - takes a download_url for a data file and reads it into a data.frame
-
-## workflow
-
->Person's name: "Alex Schiller"
->>Person's url: "rnizy" 
->>>Project url: "5ctke" 
->>>>File url: "https://"osf.io/api/v1/project/5ctke/osffiles/this.csv/version/1/"
->>>>>Output: data
  
 ## examples
 
