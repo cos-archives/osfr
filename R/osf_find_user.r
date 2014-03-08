@@ -25,7 +25,6 @@ osf_find_user <- function(user_name){
     returned <- getURL(build_search_term(user_name, osf_url_base))
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error" )
     
-    print(json_data)    
     df <- do.call('rbind', lapply(json_data$results, function(user_data){
         data.frame("user_name"=user_data$user_name, "user_id"=user_data$user_id)
     }))
