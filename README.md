@@ -13,7 +13,7 @@ if(!require("devtools")){
     install.packages("devtools")
     require("devtools")
 }
-install_github("CenterForOpenScience/osfr")
+install_git("https://github.com/CenterForOpenScience/osfr.git")
 ```
 
 ##functions
