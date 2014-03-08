@@ -27,7 +27,8 @@ osf_find_user <- function(user_name){
     
     
     df <- do.call('rbind', lapply(json_data, function(user_data){
-        data.frame("user_name"=user_data$user_name, "user-id"=user_data$user_id) 
+        data.frame("user_name"=user_data$user_name, "user-id"=user_data$user_id)
+    }))
         
         row.names(df)<-df$user_name
         df$user_name<-NULL
