@@ -1,4 +1,4 @@
-## WARNING: THIS PACKAGE IS FOR TESTING ONLY; OSF API AND R INTERFACE ARE IN A STATE OF FLUX
+## WARNING: THIS PACKAGE IS FOR TESTING ONLY; OSF API AND THIS R INTERFACE ARE IN A STATE OF FLUX
 
 **osfr** is an R package that enables API access to the Open Science Framework, namely access to public projects and their files through R.
 
