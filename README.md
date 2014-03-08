@@ -61,7 +61,7 @@ Assign the project id to a variable for the next function call:
 project_id <- projects[2,]$project
 > [1] 5ctke
 ```
-# get a project's
+### get a project's
 Get a project's files from a project_id:
 
 ```
