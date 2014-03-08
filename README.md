@@ -23,3 +23,37 @@ install_git("https://github.com/CenterForOpenScience/osfr.git")
 - `osf_get_project_files` - takes a project_id and returns a list of files and their download_urls
 - `osf_read` or `read.osf` - takes a download_url for a data file and reads it into a data.frame
 
+## examples
+```bash
+require(osfr)
+osf_find_user('Alex Schiller')
+
+>      user_name user_url
+>1 Alex Schiller    rnizy
+
+osf_get_projects('rnizy')
+
+>  projects
+>1    jusue
+>2    5ctke
+>3    mv8pj
+>4    4znzp
+
+osf_get_project_files('5ctke')
+
+>   file_name       download_url                                                      versions  date_modified
+>1  something.xlsx  https://osf.io/project//5ctke/osffiles/something.xlsx/version/1/  1         2014/02/25 08:37 PM
+>2  Untitled.png    https://osf.io/project//5ctke/osffiles/Untitled.png/version/1/    1         2013/12/11 04:56 PM
+>3  something.xls   https://osf.io/project//5ctke/osffiles/something.xls/version/1/   1         2014/02/25 05:24 PM
+
+dat <- read.osf("osf.io/api/v1/project/5ctke/osffiles/this.csv/version/1/")
+
+head(dat)
+
+> A B C D
+> 1 1 2 3 4
+> 2 2 3 4 5
+> 3 3 4 5 6
+> 4 4 5 6 7
+> 5 5 6 7 8
+> 6 6 7 8 9
