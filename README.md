@@ -24,8 +24,8 @@ install_git("https://github.com/CenterForOpenScience/osfr.git")
 - `osf_read` or `read.osf` - takes a download_url for a data file and reads it into a data.frame
 
 ## workflow
-
-Alex Schiller -> "rnizy" -> "5ctke" -> "
+Person's Name   Person's url Project url  File download url                                                   output
+"Alex Schiller" -> "rnizy" -> "5ctke" -> "https://"osf.io/api/v1/project/5ctke/osffiles/this.csv/version/1/" -> data
 ## examples
 
 Find a user's url from their name (search terms must be exact)
