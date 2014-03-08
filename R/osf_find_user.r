@@ -25,13 +25,12 @@ osf_find_user <- function(user_name){
     returned <- getURL(build_search_term(user_name, osf_url_base))
     json_data <- fromJSON(returned, method = "C", unexpected.escape = "error" )
     
-    df <- data.frame("user_name"=character(), "user_id"=character())  
     
-    for(user_data in json_data$results){
-        user_name <- user_data$user
-        user_url <- substring(user_data$user_url, 10) # cuts out "/profile/"
-        df <- rbind(df, data.frame("user_name" = user_name, "user_id" = user_url))
-    }
-    
+    df <- do.call('rbind', lapply(json_data, function(user_data){
+        data.frame("user_name"=user_data$user_name, "user-id"=user_data$user_id) 
+        
+        row.names(df)<-df$user_name
+        df$user_name<-NULL
+        
     return(df)
 }

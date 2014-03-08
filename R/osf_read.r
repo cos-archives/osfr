@@ -29,6 +29,7 @@ get_list <- list(
     )
 
 osf_read <- function(df_or_project_id, file_name="", version="" ){
+
     if(file_name==""){
         project_id<-df_or_project_id$project_id
         file_name<-df_or_project_id$file_name
@@ -36,14 +37,12 @@ osf_read <- function(df_or_project_id, file_name="", version="" ){
     }else{
         project_id<-df_or_project_id
     }
-    print(project_id)
-    print(file_name)
-    url<-paste0("https://","osf.io/api/v1/project/", project_id, "/osffiles/", file_name,"/version/", version, "/")
-    print(url)
-    ext <- file_ext(
-        substr(url, 1, regexpr("\\/version/+\\d", url, ignore.case=TRUE)-1)
-        )
-    print(ext)
+
+    url <- paste0("https://","osf.io/api/v1/project/", project_id, "/osffiles/", file_name,"/version/", version, "/")
+    ext <- file_ext("file_name")
+#     ext <- file_ext(
+#         substr(url, 1, regexpr("\\/version/+\\d", url, ignore.case=TRUE)-1)
+#         )
     if(
       is.element(ext, c("csv", "xls", "xlsx", "txt"))
       ){
