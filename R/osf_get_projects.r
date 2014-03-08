@@ -17,7 +17,7 @@ osf_get_projects <- function(user_id){
     
     df <- do.call('rbind', lapply(json_data$nodes, function(projects){
         data.frame("project"=projects$id)
-        })   
+        }))   
 
     return(df)
 }
