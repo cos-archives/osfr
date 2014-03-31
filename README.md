@@ -4,7 +4,7 @@
 
 This code is not yet ready to be used beyond trying it out, long term support of functions cannot be guaranteed.
 
-Currently requires use of our staging server--nothing there is permanent although it may seem to be consitent with osf.io--it is not. `options("osf_url_base"="staging.openscienceframework.org")` to be set to run; this should change in the next few days (it's now 2014/03/08).
+Currently requires use of our staging server--nothing there is permanent although it may seem to be consitent with osf.io--it is not: `options("osf_url_base"="staging.openscienceframework.org")` 
 
 ##install
 
